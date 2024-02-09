@@ -20,24 +20,19 @@ const timerElement = document.getElementById("output");
 // Dichiaro BOTTONE
 const buttonElement = document.querySelector("input");
 
-const clock = setInterval(countEverySecond, 1000);
+// Metto setInterval
+const countdownTime = setInterval(countdown, 1000);
 
-let seconds = 0;
-timerElement.innerText = seconds + " secondi";
-
-function countEverySecond() {
-    seconds++;
-
-    timerElement.innerText = seconds + " secondi";
-
-
-    if(seconds > 60) {
-        seconds = 0;
-    }
-
+// Mi chiamo la funzione
+function countdown() {
+    // converto i millesecondi
+    let hours = Math.floor((1000 * 60 * 60));
+    let minutes = Math.floor((1000 * 60 * 60)) / (1000 * 60);
+    let seconds = Math.floor((1000 * 60) / 1000);
 }
 
 
+// Metto botone per interrompere il countdown
 buttonElement.addEventListener("click", function() {
     clearInterval(clock);
 });
