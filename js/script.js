@@ -23,16 +23,28 @@ const buttonElement = document.querySelector("input");
 // Metto setInterval
 const countdownTime = setInterval(countdown, 1000);
 
+// Metto data attuale
+const currentDate = new Date();
+console.log(currentDate);
+
+// Metto data lezione
+const dateLecture = new Date('February 12, 2024 09:30:00');
+console.log(dateLecture);
+
+// Differenza tra le due date
+let timeDifference = dateLecture - currentDate;
+console.log(timeDifference);
+
 // Mi chiamo la funzione
 function countdown() {
     // converto i millesecondi
-    let hours = Math.floor((1000 * 60 * 60));
-    let minutes = Math.floor((1000 * 60 * 60)) / (1000 * 60);
-    let seconds = Math.floor((1000 * 60) / 1000);
+    let hours = (timeDifference / Math.floor((1000 * 60 * 60)));
+    let minutes = (timeDifference / Math.floor((1000 * 60 * 60)) / (1000 * 60));
+    let seconds = (timeDifference / Math.floor((1000 * 60) / 1000));
 }
 
 
 // Metto botone per interrompere il countdown
 buttonElement.addEventListener("click", function() {
-    clearInterval(clock);
+    clearInterval(countdown);
 });
