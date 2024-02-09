@@ -17,10 +17,10 @@ function countdown() {
     let hours = Math.floor(timeDifference / (1000 * 60 * 60));
     let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
+    let milliseconds = seconds / 1000;
 
      
-    timerElement.innerText = `${hours} ore, ${minutes} minuti, ${seconds} secondi.`;
+    timerElement.innerText = `${hours} ore, ${minutes} minuti, ${seconds} secondi, ${milliseconds} ms `;
 
 }
 
